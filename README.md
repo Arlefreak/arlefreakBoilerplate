@@ -17,9 +17,3 @@ npm install
 ```shell
 grunt
 ```
-
-Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
-
-```js
-grunt.loadNpmTasks('grunt-contrib-imagemin');
-```
