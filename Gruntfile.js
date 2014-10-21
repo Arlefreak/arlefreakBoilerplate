@@ -85,9 +85,18 @@ module.exports = function(grunt) {
                 tasks: ['newer:copy']
             }
         },
+        connect: {
+            server: {
+                options: {
+                    port: 9001,
+                    base: 'build'
+                }
+            }
+        },
     });
 
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-cleanempty');
     grunt.loadNpmTasks('grunt-contrib-stylus');
@@ -113,6 +122,6 @@ module.exports = function(grunt) {
 
     grunt.registerTask(
         'default',
-        'Watches the project for changes, automatically builds them and runs a server.', ['build', 'watch']
+        'Watches the project for changes, automatically builds them and runs a server.', ['connect','build', 'watch']
     );
 };
