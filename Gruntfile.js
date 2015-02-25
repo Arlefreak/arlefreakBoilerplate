@@ -94,7 +94,10 @@ module.exports = function(grunt) {
                     port: 9001,
                     base: 'build',
                     livereload: 35729,
-                    hostname: 'localhost'
+                    hostname: 'localhost',
+                    open: {
+                        appName: 'google-chrome-stable'
+                    },
                 }
             }
         },
