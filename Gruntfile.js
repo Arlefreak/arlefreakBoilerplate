@@ -70,15 +70,18 @@ module.exports = function(grunt) {
         watch: {
             stylesheets: {
                 files: 'src/**/*.styl',
-                tasks: ['stylesheets']
+                tasks: ['stylesheets'],
+                options: {livereload: true,}
             },
             scripts: {
                 files: 'src/**/*.js',
-                tasks: ['scripts']
+                tasks: ['scripts'],
+                options: {livereload: true,}
             },
             images: {
                 files: 'src/**/*.{png,jpg,gif}',
-                tasks: ['newer:imagemin']
+                tasks: ['newer:imagemin'],
+                options: {livereload: true,}
             },
             copy: {
                 files: ['src/**', '!src/**/*.{js,styl,png,jpg,gif}'],
@@ -89,7 +92,9 @@ module.exports = function(grunt) {
             server: {
                 options: {
                     port: 9001,
-                    base: 'build'
+                    base: 'build',
+                    livereload: 35729,
+                    hostname: 'localhost'
                 }
             }
         },
